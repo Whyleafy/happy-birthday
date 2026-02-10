@@ -1,31 +1,32 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import { useNavigate } from "react-router-dom"; 
+import {useNavigate} from "react-router-dom";
 import "../App.css";
 
 function Home() {
-  const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
-  return (
-    <div className="app">
-      <div className="text-container">
-        <div className="text">
-          <Typewriter
-            options={{
-              strings: ["С ДНЕМ Р0ЖДЕНИЯ ВАСЕНЬКА!!!! "],
-              autoStart: true,
-              loop: true,
-              delay: 100,
-              deleteSpeed: 50,
-            }}
-          />
+    return (
+        <div className="app">
+            <div className="text-container">
+                <div className="text">
+                    <Typewriter
+                        options={{
+                            strings: ["С ДНЕМ Р0ЖДЕНИЯ ВАСЕНЬКА!!!! "],
+                            autoStart: true,
+                            loop: true,
+                            delay: 100,
+                            deleteSpeed: 50,
+                        }}
+                    />
+                </div>
+                <img className="floating-vasya" src="/img/vasya-pixel.png" alt="letter"/>
+                <button className="btn" onClick={() => navigate("/letter")}>
+                    ТblКни (づ｡◕‿‿◕｡)づ
+                </button>
+            </div>
         </div>
-        <button className="btn" onClick={() => navigate("/letter")}>
-          ТblКни   (づ｡◕‿‿◕｡)づ
-        </button>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default Home;

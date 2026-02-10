@@ -18,9 +18,7 @@ function Letter() {
                         deleteSpeed: 50
                     }}/>
             </div>
-            <div onClick={() => navigate("/the-birthday-letter")}>
-                <img className="floating-img" src="/img/letter.png" alt="letter" />
-            </div>
+            <img style={{marginTop: "30px"}} className="floating-img" src="/img/letter.png" alt="letter" />
             <div>
                 <button className="btn" onClick={() => navigate("/the-birthday-letter")}>0ткрой! (•̀ᴗ•́)و ̑̑</button>
             </div>
