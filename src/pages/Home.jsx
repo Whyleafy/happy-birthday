@@ -20,7 +20,11 @@ function Home() {
                         }}
                     />
                 </div>
-                <img className="floating-vasya" src="/img/vasya-pixel.png" alt="letter"/>
+                <div className="floating-images">
+                    <img className="floating-cats" src="/img/noize.png" alt="letter"/>
+                    <img className="floating-vasya" src="/img/vasya-pixel.png" alt="letter"/>
+                    <img className="floating-cats" src="/img/fonya.png" alt="letter"/>
+                </div>
                 <button className="btn" onClick={() => navigate("/letter")}>
                     ТblКни (づ｡◕‿‿◕｡)づ
                 </button>
