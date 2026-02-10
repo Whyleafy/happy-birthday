@@ -1,13 +1,16 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {StepLetters} from "../StepLetter.jsx";
+import ReactConfetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 function TheBirthdayLetter() {
     const navigate = useNavigate();
     const [popupImage, setPopupImage] = useState(null);
-    const [step, setStep] = useState(1); // старт лучше с 1, если есть 1..4
+    const [step, setStep] = useState(1);
+    const { width, height } = useWindowSize();
 
-    const next = () => setStep((s) => Math.min(s + 1, 4));
+    const next = () => setStep((s) => Math.min(s + 1, 6));
     const back = () => setStep((s) => Math.max(s - 1, 1));
 
     const openPopup = (imageSrc) => setPopupImage(imageSrc);
@@ -15,14 +18,33 @@ function TheBirthdayLetter() {
 
     return (
         <div className="app">
+
             <StepLetters step={step} />
+            <div className="title">
+                <p>{step === 6 ? "Я ТЕБЯ 0ЧЕНЬ ЛЮБЛЮ!!" : `Страничек осталось: ${6 - step}`}</p>
+            </div>
             <div style={{ display: "flex", gap: 8 }}>
-                <button className="btn" onClick={back} disabled={step === 1}>
-                    Назад
-                </button>
-                <button className="btn" onClick={next} disabled={step === 4}>
-                    Вперед
-                </button>
+                {
+                    step > 1 && (
+                        <button className="btn" onClick={back} disabled={step === 1}>
+                            Назад
+                        </button>
+                    )
+                }
+                {
+                    step < 6 && (
+                        <button className="btn" onClick={next} disabled={step === 6}>
+                            Вперед
+                        </button>
+                    )
+                }
+                {step >= 5 && (
+                    <ReactConfetti
+                        width={width}
+                        numberOfPieces={70}
+                        height={height + 400}
+                    />
+                )}
             </div>
 
             <div className="title">
