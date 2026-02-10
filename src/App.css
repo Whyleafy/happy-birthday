@@ -75,7 +75,6 @@ html{
 .floating-images {
   display: flex;
   align-items: center;
-  gap: 24px
 }
 
 .floating-img {
@@ -90,7 +89,7 @@ html{
 }
 
 .floating-vasya {
-  width: 200px;
+  width: 150px;
   animation: floatAnimationVasya 3s ease-in-out infinite;
 }
 
@@ -102,7 +101,7 @@ html{
 }
 
 .floating-cats {
-  width: 100px;
+  width: 75px;
   animation: floatAnimationCats 1s ease-in-out infinite;
 }
 
